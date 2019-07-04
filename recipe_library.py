@@ -119,8 +119,24 @@ def match_recipe(ingredients):
 				total = total + 1
 				print(recipe)
 
-match_recipe("soy sauce")
+keto_recipes = {
+	'winter frittata' : ['6 large eggs', 
+	'2 tbsp milk or water',
+	'black pepper',
+	'nutmeg',
+	'4 slices of bacon',
+	'1 small onion', 
+	'1 tbsp olive oil',
+	'3 potatoes'
+	'escarole',
+	'1 garlic clove',
+	'feta cheese'],
+	'eggs benedict cups',
+}
 
+winter_frittata = ['winter frittata', 
+					'6 large eggs', 
+					'2 tbsp milk or water']
 
 
 
