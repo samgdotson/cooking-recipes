@@ -24,7 +24,7 @@ class recipe(object):
 			How long it takes to make the recipe from start to finish (in minutes). Approximately. 
 
 	"""
-	def __init__(self, name, ingredients, directions, **kwargs):
+	def __init__(self, name, ingredients, directions=None, **kwargs):
 		super(recipe, self).__init__()
 		self.name = name
 		self.ingredients = ingredients
@@ -48,6 +48,26 @@ class recipe(object):
 		self.ingredients.append(ingredients) #ingredients must be a list in order to have the method `append`. 
 		return
 
+	def num_ingredients(self):
+		"""
+		Returns:
+		-------- 
+		int : the number of ingredients used in a recipe.
+		"""
+		return len(self.ingredients)
+
+	def add_directions(self, path):
+		"""
+		Adds directions to the recipe.
+
+		Parameters:
+		-----------
+		path : string
+			The path to the file containing the directions. 
+		"""
+		self.directions = directions
+		return
+
 	def add_step(self, step):
 		"""
 		Adds a step to the directions.
@@ -67,11 +87,18 @@ class recipe(object):
 
 		return
 
+	def check_vegan(self):
+		"""
+		Checks if the recipe is vegan. 
 
+		Returns
+		-------
+		boolean : True for vegan, False if not.
+		"""
 
+		for ingredient in self.ingredients:
+			if ingredient not in vegan_ingredients:
+				return False
 
+		return True
 
-
-
-
-		

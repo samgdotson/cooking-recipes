@@ -1,17 +1,6 @@
-
+import recipe as rp 
 
 recipes = {
-"chicken tonkatsu" : ["chicken breast",
-"egg",
-"Dijon mustard",
-"water",
-"panko",
-"vegetable oil",
-"napa cabbage",
-"yellow onion",
-"soy sauce",
-"portobello mushrooms",
-"pickled ginger"], 
 "flat iron steak" : ["flat iron steak",
 "black pepper",
 "green beans",
@@ -76,67 +65,25 @@ inventory = ["cornstarch",
 "flour",
 ]
 
+def add_recipe(name, ingredients):
+	new_recipe = rp.recipe(name, ingredients)
+	cookbook.append(new_recipe)
+	return
 
-def number_ingredients(recipe):
-	"""
-	Returns the total number of ingredients in a recipe.
+ls_ing =  ["chicken breast",
+"egg",
+"Dijon mustard",
+"water",
+"panko",
+"vegetable oil",
+"napa cabbage",
+"yellow onion",
+"soy sauce",
+"portobello mushrooms",
+"pickled ginger"]
+chkn_tonk = rp.recipe("chicken tonkatsu", ls_ing)
 
-	Parameters:
-	-----------
-	recipe : string
-		The name of the recipe. A key in the dictionary
-		``recipes``.
-
-	Returns:
-	--------
-	Inline, the number of ingredients in the recipe
-	"""
-	recipe = recipe.lower()
-	return (len(recipes[recipe]))
-
-print(number_ingredients("Chicken Tonkatsu"))
-
-def match_recipe(ingredients):
-	"""
-	Returns a list of possible recipes given the a list
-	of ingredients that you want to use, or have on hand.
-
-	Parameters:
-	-----------
-	ingredients : list, string
-
-	Returns: 
-	recipes : list, string
-	"""
-
-	possible = []
-
-	for recipe in recipes:
-		total = 0
-		for ingredient in ingredients:
-			if ingredient in recipes:
-				print("yes")
-				total = total + 1
-				print(recipe)
-
-keto_recipes = {
-	'winter frittata' : ['6 large eggs', 
-	'2 tbsp milk or water',
-	'black pepper',
-	'nutmeg',
-	'4 slices of bacon',
-	'1 small onion', 
-	'1 tbsp olive oil',
-	'3 potatoes'
-	'escarole',
-	'1 garlic clove',
-	'feta cheese'],
-	'eggs benedict cups',
-}
-
-winter_frittata = ['winter frittata', 
-					'6 large eggs', 
-					'2 tbsp milk or water']
+print(chkn_tonk.name)
 
 
 
